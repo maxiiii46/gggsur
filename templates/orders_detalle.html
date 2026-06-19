@@ -1,0 +1,8 @@
+<h1>Detalle del Pedido #{{ pedido['id'] }}</h1>
+<p>Cliente: {{ pedido['nombre_cliente'] }}</p>
+<p>Total: ${{ pedido['total'] }}</p>
+<ul>
+  {% for item in items %}
+    <li>{{ item['producto_id'] }} - Cantidad: {{ item['cantidad'] }} - Precio: ${{ item['precio_unitario'] }}</li>
+  {% endfor %}
+</ul>
