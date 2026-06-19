@@ -1,0 +1,6 @@
+<h1>Mis Pedidos</h1>
+<ul>
+  {% for p in pedidos %}
+    <li>Pedido #{{ p['id'] }} - Total: ${{ p['total'] }} - Fecha: {{ p['fecha'] }}</li>
+  {% endfor %}
+</ul>
