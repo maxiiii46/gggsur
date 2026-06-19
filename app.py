@@ -17,6 +17,8 @@ from reports import reports_bp
 app.register_blueprint(reports_bp)
 from orders import orders_bp
 app.register_blueprint(orders_bp)
+from stock import stock_bp
+app.register_blueprint(stock_bp)
 DB = "database.db"
 
 # Costos de envío por zona (FIX RF12)
