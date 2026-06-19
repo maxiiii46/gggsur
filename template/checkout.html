@@ -5,6 +5,8 @@
 <div class="confirmacion">
     <h2>¡Gracias por tu compra, {{ nombre }}!</h2>
     <p>Tu pedido #{{ pedido_id }} fue registrado correctamente.</p>
+    <p>Costo de envío: ${{ "%.2f"|format(costo_envio) }}</p>
+    <p>Total pagado: ${{ "%.2f"|format(total) }}</p>
     <p>Te enviamos un correo y un WhatsApp con la confirmación.</p>
 </div>
 {% else %}
@@ -21,8 +23,31 @@
         <label for="email">Email</label>
         <input type="email" name="email" id="email">
     </div>
-    <p class="total-carrito">Total: ${{ "%.2f"|format(total) }}</p>
+    <div class="campo">
+        <label for="direccion">Dirección de envío</label>
+        <input type="text" name="direccion" id="direccion">
+    </div>
+    <div class="campo">
+        <label for="zona">Zona de envío</label>
+        <select name="zona" id="zona">
+            <option value="">Seleccionar...</option>
+            {% for z, costo in zonas.items() %}
+                <option value="{{ z }}">{{ z|upper }} — ${{ "%.2f"|format(costo) }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="campo">
+        <label for="metodo_pago">Método de pago</label>
+        <select name="metodo_pago" id="metodo_pago">
+            <option value="">Seleccionar...</option>
+            <option value="tarjeta">Tarjeta de crédito/débito</option>
+            <option value="transferencia">Transferencia bancaria</option>
+            <option value="efectivo">Efectivo (contraentrega)</option>
+        </select>
+    </div>
+    <p class="total-carrito">Subtotal: ${{ "%.2f"|format(total) }}</p>
     <button type="submit" class="btn btn-primario">Confirmar pedido</button>
 </form>
 {% endif %}
 {% endblock %}
+
