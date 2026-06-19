@@ -11,7 +11,8 @@ from auth_utils import es_admin, obtener_pregunta_seguridad, validar_respuesta_y
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "clave_secreta_cambiame")
-
+from admin import admin_bp
+app.register_blueprint(admin_bp)
 DB = "database.db"
 
 # Costos de envío por zona (FIX RF12)
