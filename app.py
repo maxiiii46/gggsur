@@ -13,6 +13,8 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "clave_secreta_cambiame")
 from admin import admin_bp
 app.register_blueprint(admin_bp)
+from reports import reports_bp
+app.register_blueprint(reports_bp)
 DB = "database.db"
 
 # Costos de envío por zona (FIX RF12)
