@@ -1,0 +1,14 @@
+<h1>Panel Administrativo</h1>
+<h2>Productos</h2>
+<ul>
+  {% for p in productos %}
+    <li>{{ p['nombre'] }} - ${{ p['precio'] }} (Stock: {{ p['stock'] }})</li>
+  {% endfor %}
+</ul>
+
+<h2>Pedidos</h2>
+<ul>
+  {% for ped in pedidos %}
+    <li>Pedido #{{ ped['id'] }} - Cliente: {{ ped['nombre_cliente'] }} - Total: ${{ ped['total'] }}</li>
+  {% endfor %}
+</ul>
