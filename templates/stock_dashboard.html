@@ -1,0 +1,8 @@
+<h1>Gestión de Stock</h1>
+<ul>
+  {% for p in productos %}
+    <li>{{ p['nombre'] }} - Stock actual: {{ p['stock'] }}
+        <a href="/stock/actualizar/{{ p['id'] }}">Actualizar</a>
+    </li>
+  {% endfor %}
+</ul>
