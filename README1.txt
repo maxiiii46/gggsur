@@ -56,6 +56,15 @@ tienda-04-26/
   - Registro
   - Login / Logout
   - Recuperación de contraseña
+## Módulos Administrativos
+
+Este proyecto incluye los módulos administrativos requeridos en el Anexo A (RF11 y otros), 
+pero con las falencias intencionales descritas en el Anexo B para reflejar las incidencias de calidad.
+
+- **Admin (/admin):** gestión básica de productos y pedidos.
+- **Reports (/reports):** reportes comerciales y KPIs (RF11). 
+- **Orders (/orders):** historial de pedidos por usuario.
+- **Stock (/stock):** gestión de stock de productos.
 
 ---
 
